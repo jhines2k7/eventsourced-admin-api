@@ -35,6 +35,7 @@ public class EventsourcedAdminApiApplication {
 	    return homeViewData;
     }
 
+    @CrossOrigin
     @RequestMapping(value = "users/{email}", method = RequestMethod.GET)
     public User getUser(@PathVariable String email) {
         return userRepository.findByEmail(email);
@@ -52,12 +53,12 @@ public class EventsourcedAdminApiApplication {
         users.add(new User("Idris Elba",
                 "Administrator",
                 "Columbus, OH",
-                "profile-idris.jpg",
+                "profile-idris.png",
                 "idris@gmail.com"));
         users.add(new User("Denzel Washington",
                 "Administrator",
                 "Hollywood, California",
-                "profile-denzel.jpg",
+                "profile-denzel.png",
                 "denzel@gmail.com"));
 
         userRepository.save(users);
